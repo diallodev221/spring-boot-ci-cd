@@ -1,4 +1,4 @@
-# Spring Boot Docker GitHub Actions
+# Spring Boot CI-CD with GitHub Actions and Docker
 
 ## Description
 This repository contains a Spring Boot application that is containerized using Docker and includes GitHub Actions workflows for CI/CD automation.
