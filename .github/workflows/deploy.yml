@@ -13,7 +13,7 @@ env:
   POSTGRESQL_USER: diallodev
   POSTGRESQL_PASSWORD: passer
   # Java
-  JAVA_VERSION: 17
+  JAVA_VERSION: 1.15
   # DockerHub
   DOCKER_HUB_USERNAME: diallocodeur5
   # AWS & Elastic Bean Stalk
@@ -64,7 +64,7 @@ jobs:
           image: diallocodeur5/student-api
           tags: v1
           registry: docker.io
-          dockerfile: Dockerfile.ci
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
