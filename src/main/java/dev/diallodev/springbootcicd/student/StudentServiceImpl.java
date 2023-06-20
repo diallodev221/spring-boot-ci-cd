@@ -21,6 +21,17 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public void updateStudent(Long studentId, Student student) {
+        studentRepository.findById(studentId)
+                .map(s -> {
+                            s.setName(student.getName());
+                            s.setEmail(student.getEmail());
+                            s.setAge(student.getAge());
+                    return studentRepository.save(s);
+                }).orElseThrow(() -> new IllegalArgumentException("Student with id"+ studentId+ " not found"));
+    }
+
+    @Override
     public void deleteStudent(Long studentId) {
         studentRepository.deleteById(studentId);
     }

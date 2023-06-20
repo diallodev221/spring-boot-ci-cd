@@ -12,6 +12,9 @@ public interface StudentApi {
     @GetMapping
     ResponseEntity<List<Student>> getAllStudents();
 
+    @PutMapping("/{studentId}")
+    ResponseEntity<String> updateStudent(@PathVariable Long studentId, @RequestBody Student student);
+
     @DeleteMapping("/{studentId}")
     ResponseEntity<String> deleteStudent(@PathVariable Long studentId);
 }
