@@ -30,6 +30,12 @@ public class StudentController implements StudentApi {
     }
 
     @Override
+    public ResponseEntity<String> updateStudent(Long studentId, Student student) {
+        studentService.updateStudent(studentId, student);
+        return ResponseEntity.ok("Student with id: "+ studentId+ " updated successfully!");
+    }
+
+    @Override
     public ResponseEntity<String> deleteStudent(Long studentId) {
         studentService.deleteStudent(studentId);
         return ResponseEntity.ok("Student with id "+ studentId+ " was deleted");
