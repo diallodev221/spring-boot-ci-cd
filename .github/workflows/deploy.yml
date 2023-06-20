@@ -62,7 +62,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: diallocodeur5/student-api
-          tags: v1, latest
+          tags: ${{steps.build-number.outputs.BUILD_NUMBER}}
           registry: docker.io
           username: ${{ env.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
