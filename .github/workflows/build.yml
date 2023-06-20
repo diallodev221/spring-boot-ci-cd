@@ -38,6 +38,17 @@ jobs:
         run: mvn -B test --file pom.xml
 
       - name: Build The Application
-        run: mvn -B package --file pom.xml
+        run: |
+          mvn clean
+          mvn -B package --file pom.xml
+
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          text: ':white_check_mark: Build successful... :eyes:'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
 
    
