@@ -51,6 +51,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'corretto'
+
 
       - name: Build Number
         id: build-number
@@ -60,9 +62,8 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: diallocodeur5/student-api
-          tags: ${{steps.build-number.outputs.BUILD_NUMBER}}
+          tags: v1, latest
           registry: docker.io
-          dockerfile: Dockerfile
           username: ${{ env.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
