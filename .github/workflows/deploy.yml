@@ -66,7 +66,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: diallocodeur5/student-api:${{steps.build-number.outputs.BUILD_NUMBER}}
+          tags: ${{ env.DOCKER_HUB_USERNAME }}/student-api:${{steps.build-number.outputs.BUILD_NUMBER}}
 
       - uses: 8398a7/action-slack@v3
         with:
