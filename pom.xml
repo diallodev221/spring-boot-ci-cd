@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dev.diallodev</groupId>
 	<artifactId>spring-boot-ci-cd</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>spring-boot-ci-cd</name>
 	<description>spring-boot-ci-cd</description>
 	<properties>
