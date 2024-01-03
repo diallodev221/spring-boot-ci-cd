@@ -17,7 +17,7 @@ To get started with this project, follow the steps below:
 1. Clone the repository to your local machine:
 
 ```shell
-git clone https://github.com/diallodeveloper/spring-boot-github-actions.git
+git clone https://github.com/diallodev221/spring-boot-github-actions.git
 ````
 
 2. Change into the project directory:
